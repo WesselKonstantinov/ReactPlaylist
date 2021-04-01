@@ -3,10 +3,10 @@ import SongTable from './SongTable';
 
 function SongOverview() {
     return (
-        <div>
+        <main>
             <SongForm />
             <SongTable />
-        </div>
+        </main>
     );
 }
 

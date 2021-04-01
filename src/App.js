@@ -1,8 +1,12 @@
+import Header from './components/Header';
 import SongOverview from './components/SongOverview';
 
 function App() {
   return (
-    <SongOverview />
+    <div>
+      <Header />
+      <SongOverview />
+    </div>
   );
 }
 
