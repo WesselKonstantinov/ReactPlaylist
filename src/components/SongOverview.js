@@ -15,10 +15,10 @@ function SongOverview() {
         const { name, artist, genre, rating } = inputValues;
         const newSong = {
             id: (songs.length === 0) ? 1 : songs.length + 1,
-            name: name,
-            artist: artist,
-            genre: genre,
-            rating: rating,
+            name,
+            artist,
+            genre,
+            rating,
         };
         setSongs([...songs, newSong]);
     }
