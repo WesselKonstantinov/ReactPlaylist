@@ -1,31 +1,75 @@
-function SongForm() {
+function SongForm(props) {
+    function handleInputChange(e) {
+        const { name, value } = e.target;
+        props.setInputValues({
+            ...props.inputValues,
+            [name]: value,
+        });
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        props.addSong(props.inputValues);
+        props.setInputValues({
+            name: '',
+            artist: '',
+            genre: '',
+            rating: '',
+        });
+    }
+
+    const { name, artist, genre, rating } = props.inputValues;
     return (
-        <form>
-            <input type="text" name="song" placeholder="Song" />
-            <input type="text" name="artist" placeholder="Artist" />
-            <select>
+        <form onSubmit={handleSubmit}>
+            <input
+                type="text"
+                name="name"
+                value={name || ''}
+                placeholder="Song"
+                onChange={handleInputChange}
+            />
+            <input
+                type="text"
+                name="artist"
+                value={artist || ''}
+                placeholder="Artist"
+                onChange={handleInputChange}
+            />
+            <select
+                name="genre"
+                value={genre || ''}
+                onChange={handleInputChange}
+            >
                 <option value="">-- Genre --</option>
-                <option value="blues">Blues</option>
-                <option value="classical">Classical</option>
-                <option value="country">Country</option>
-                <option value="disco">Disco</option>
-                <option value="dubstep">Dubstep</option>
-                <option value="eurodance">Eurodance</option>
-                <option value="hip-hop">Hip Hop</option>
-                <option value="house">House</option>
-                <option value="jazz">Jazz</option>
-                <option value="latin">Latin</option>
-                <option value="metal">Metal</option>
-                <option value="pop">Pop</option>
-                <option value="rap">Rap</option>
-                <option value="reggae">Reggae</option>
-                <option value="rhythm-and-blues">Rhythm and Blues</option>
-                <option value="rock">Rock</option>
-                <option value="soul">Soul</option>
-                <option value="techno">Techno</option>
-                <option value="trance">Trance</option>
+                <option value="Blues">Blues</option>
+                <option value="Classical">Classical</option>
+                <option value="Country">Country</option>
+                <option value="Disco">Disco</option>
+                <option value="Dubstep">Dubstep</option>
+                <option value="Eurodance">Eurodance</option>
+                <option value="Hip Hop">Hip Hop</option>
+                <option value="House">House</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Latin">Latin</option>
+                <option value="Metal">Metal</option>
+                <option value="Pop">Pop</option>
+                <option value="Rap">Rap</option>
+                <option value="Reggae">Reggae</option>
+                <option value="Rhythm and Blues">Rhythm and Blues</option>
+                <option value="Rock">Rock</option>
+                <option value="Soul">Soul</option>
+                <option value="Techno">Techno</option>
+                <option value="Trance">Trance</option>
             </select>
-            <input type="number" name="rating" min="1" max="5" placeholder="Rating (1-5)" />
+            <input
+                type="number"
+                name="rating"
+                value={rating || ''}
+                min="1"
+                max="5"
+                placeholder="Rating (1-5)"
+                onChange={handleInputChange}
+            />
             <button type="submit">Add song</button>
         </form>
     );
