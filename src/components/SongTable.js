@@ -1,6 +1,16 @@
 import Song from './Song';
 
-function SongTable() {
+function SongTable(props) {
+    const songs = props.songs.map(song => (
+        <Song
+            key={song.id}
+            name={song.name}
+            artist={song.artist}
+            genre={song.genre}
+            rating={song.rating}
+        />
+    ));
+
     return (
         <table>
             <thead>
@@ -12,7 +22,7 @@ function SongTable() {
                 </tr>
             </thead>
             <tbody>
-                <Song />
+                {songs}
             </tbody>
         </table>
     );

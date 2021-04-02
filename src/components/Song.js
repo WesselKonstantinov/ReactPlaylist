@@ -1,10 +1,11 @@
-function Song() {
+function Song(props) {
+    const { name, artist, genre, rating } = props;
     return (
         <tr>
-            <td>Rockin' For Myself</td>
-            <td>Motiv8</td>
-            <td>Eurodance</td>
-            <td>5</td>
+            <td>{name}</td>
+            <td>{artist}</td>
+            <td>{genre}</td>
+            <td>{rating}</td>
         </tr>
     );
 }
