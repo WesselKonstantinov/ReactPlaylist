@@ -25,7 +25,7 @@ function SongForm() {
                 <option value="techno">Techno</option>
                 <option value="trance">Trance</option>
             </select>
-            <input type="number" name="rating" min="1" max="5" />
+            <input type="number" name="rating" min="1" max="5" placeholder="Rating (1-5)" />
             <button type="submit">Add song</button>
         </form>
     );
