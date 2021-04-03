@@ -23,6 +23,11 @@ function SongOverview() {
         setSongs([...songs, newSong]);
     }
 
+    function deleteSong(id) {
+        const remainingSongs = songs.filter(song => id !== song.id);
+        setSongs(remainingSongs);
+    }
+
     return (
         <main>
             <SongForm
@@ -30,7 +35,10 @@ function SongOverview() {
                 setInputValues={setInputValues}
                 addSong={addSong}
             />
-            <SongTable songs={songs} />
+            <SongTable
+                songs={songs}
+                deleteSong={deleteSong}
+            />
         </main>
     );
 }

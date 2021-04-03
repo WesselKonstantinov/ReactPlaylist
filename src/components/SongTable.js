@@ -8,6 +8,8 @@ function SongTable(props) {
             artist={song.artist}
             genre={song.genre}
             rating={song.rating}
+            id={song.id}
+            deleteSong={props.deleteSong}
         />
     ));
 

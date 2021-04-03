@@ -1,5 +1,10 @@
 function Song(props) {
-    const { name, artist, genre, rating } = props;
+    const { name, artist, genre, rating, id } = props;
+
+    function handleClick() {
+        props.deleteSong(id);
+    }
+
     return (
         <tr>
             <td>
@@ -15,7 +20,7 @@ function Song(props) {
                 {rating}
             </td>
             <td>
-                <button>Delete</button>
+                <button onClick={handleClick}>Delete</button>
             </td>
         </tr>
     );
