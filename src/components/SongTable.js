@@ -19,6 +19,7 @@ function SongTable(props) {
                     <th>Artist</th>
                     <th>Genre</th>
                     <th>Rating</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
