@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import SongForm from './SongForm';
+import SongFilter from './SongFilter';
 import SongTable from './SongTable';
 
 function SongOverview() {
@@ -35,6 +36,7 @@ function SongOverview() {
                 setInputValues={setInputValues}
                 addSong={addSong}
             />
+            <SongFilter />
             <SongTable
                 songs={songs}
                 deleteSong={deleteSong}
