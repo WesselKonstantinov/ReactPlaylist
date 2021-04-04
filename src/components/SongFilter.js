@@ -8,9 +8,14 @@ function SongFilter(props) {
     }
 
     return (
-        <form>
-            <label htmlFor="genre-select">Filter by:</label>
-            <select name="genre" id="genre-select" onChange={handleFilterChange}>
+        <form className="song-filter">
+            <label className="song-filter__label" htmlFor="genre-select">Filter by:</label>
+            <select
+                className="song-filter__select"
+                name="genre"
+                id="genre-select"
+                onChange={handleFilterChange}
+            >
                 <option value="">{(props.filteredValues.genre) ? 'Reset filter' : '-- Genre --'}</option>
                 <option value="Blues">Blues</option>
                 <option value="Classical">Classical</option>
@@ -33,8 +38,13 @@ function SongFilter(props) {
                 <option value="Trance">Trance</option>
             </select>
 
-            <label htmlFor="rating-select">Filter by:</label>
-            <select name="rating" id="rating-select" onChange={handleFilterChange}>
+            <label className="song-filter__label" htmlFor="rating-select">Filter by:</label>
+            <select
+                className="song-filter__select"
+                name="rating"
+                id="rating-select"
+                onChange={handleFilterChange}
+            >
                 <option value="">{(props.filteredValues.rating) ? 'Reset filter' : '-- Rating --'}</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
