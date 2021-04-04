@@ -1,2 +1,131 @@
+/* Variables */
+/* Global Styles */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/*# sourceMappingURL=style.css.map *//*# sourceMappingURL=style.css.map */
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  background-color: #03132c;
+  color: #fff;
+}
+
+.app__header {
+  font-size: 2rem;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 10px;
+  background: linear-gradient(#0a9ee2, #03132c);
+}
+.app__main-section {
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.6rem;
+}
+
+/* Input Field Styles */
+.song-form__input, .song-form__select, .song-form__submit {
+  width: 100%;
+  font-family: inherit;
+  font-size: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.song-form__submit {
+  color: #fff;
+  background-color: #068406;
+  border: 2px solid transparent;
+  border-radius: 5px;
+}
+
+/* Filter Section Styles */
+.song-filter__row {
+  margin-bottom: 10px;
+}
+.song-filter__label {
+  font-size: 1.8rem;
+}
+.song-filter__select {
+  font-family: inherit;
+  font-size: 100%;
+  width: 100%;
+}
+
+/* Song Table Styles */
+.song-table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+.song-table__row {
+  border-bottom: 1px solid #fff;
+}
+.song-table__header, .song-table__data {
+  padding: 15px;
+}
+.song-table__data {
+  font-size: 1.2rem;
+}
+.song-table__delete-button {
+  font-family: inherit;
+  font-size: 100%;
+  color: #fff;
+  background-color: #d60000;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 768px) {
+  .song-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  .song-form__submit {
+    grid-column: 1/3;
+  }
+
+  .song-filter {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+
+  .song-table__header {
+    font-size: 2.2rem;
+  }
+  .song-table__data {
+    font-size: 1.6rem;
+  }
+}
+/* Desktop Styles */
+@media screen and (min-width: 1024px) {
+  .app__main-section {
+    max-width: 900px;
+  }
+
+  .song-form {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .song-form__submit {
+    grid-column: 1/5;
+  }
+
+  .song-table__header {
+    font-size: 2.4rem;
+  }
+  .song-table__data {
+    font-size: 1.8rem;
+  }
+}/*# sourceMappingURL=style.css.map */

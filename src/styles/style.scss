@@ -1,0 +1,163 @@
+/* Variables */ 
+$color-white: #fff;
+$color-green: #068406;
+$color-red: #d60000;
+$color-blue-dark: #03132c; //#03132c
+$color-blue-light: #0a9ee2;
+
+/* Global Styles */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    background-color: $color-blue-dark;
+    color: $color-white;
+}
+
+.app {
+    &__header {
+        font-size: 2rem;
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 10px;
+        background: linear-gradient($color-blue-light, $color-blue-dark);
+    }
+
+    &__main-section {
+        width: 90%;
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.6rem;
+    }
+}
+
+/* Input Field Styles */
+.song-form {
+    &__input,
+    &__select,
+    &__submit {
+        width: 100%;
+        font-family: inherit;
+        font-size: 100%;
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+
+    &__submit {
+        color: $color-white;
+        background-color: $color-green;
+        border: 2px solid transparent;
+        border-radius: 5px;
+    }
+}
+
+/* Filter Section Styles */
+.song-filter {
+    &__row {
+        margin-bottom: 10px;
+    }
+    &__label {
+        font-size: 1.8rem;
+    }
+
+    &__select {
+        font-family: inherit;
+        font-size: 100%;
+        width: 100%;
+    }
+}
+
+/* Song Table Styles */ 
+.song-table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+
+    &__row {
+        border-bottom: 1px solid $color-white;
+    }
+
+    &__header,
+    &__data {
+        padding: 15px;
+    }
+
+    &__data {
+        font-size: 1.2rem;
+    }
+
+    &__delete-button {
+        font-family: inherit;
+        font-size: 100%;
+        color: $color-white;
+        background-color: $color-red;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        padding: 3px;
+    }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 768px) {
+    .song-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+
+        &__submit {
+            grid-column: 1 / 3;
+        }
+    }
+
+    .song-filter {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+
+    .song-table {
+        &__header {
+            font-size: 2.2rem;
+        }
+
+        &__data {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1024px) {
+    .app__main-section {
+        max-width: 900px;
+    }
+
+    .song-form {
+        grid-template-columns: repeat(4, 1fr);
+
+        &__submit {
+            grid-column: 1 / 5;
+        }
+    }
+
+    .song-table {
+        &__header {
+            font-size: 2.4rem;
+        }
+
+        &__data {
+            font-size: 1.8rem;
+        }
+    }
+}
