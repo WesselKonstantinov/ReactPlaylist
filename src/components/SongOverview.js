@@ -11,6 +11,10 @@ function SongOverview() {
         genre: '',
         rating: '',
     });
+    const [filteredValues, setFilteredValues] = useState({
+        genre: '',
+        rating: '',
+    });
 
     function addSong(inputValues) {
         const { name, artist, genre, rating } = inputValues;
@@ -36,10 +40,14 @@ function SongOverview() {
                 setInputValues={setInputValues}
                 addSong={addSong}
             />
-            <SongFilter />
+            <SongFilter
+                filteredValues={filteredValues}
+                setFilteredValues={setFilteredValues}
+            />
             <SongTable
                 songs={songs}
                 deleteSong={deleteSong}
+                filteredValues={filteredValues}
             />
         </main>
     );

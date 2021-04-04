@@ -1,17 +1,56 @@
 import Song from './Song';
 
 function SongTable(props) {
-    const songs = props.songs.map(song => (
-        <Song
-            key={song.id}
-            name={song.name}
-            artist={song.artist}
-            genre={song.genre}
-            rating={song.rating}
-            id={song.id}
-            deleteSong={props.deleteSong}
-        />
-    ));
+    let songs;
+    if (props.filteredValues.genre && !props.filteredValues.rating) {
+        songs = props.songs.filter(song => song.genre === props.filteredValues.genre).map(song => (
+            <Song
+                key={song.id}
+                name={song.name}
+                artist={song.artist}
+                genre={song.genre}
+                rating={song.rating}
+                id={song.id}
+                deleteSong={props.deleteSong}
+            />
+        ));
+    } else if (props.filteredValues.rating && !props.filteredValues.genre) {
+        songs = props.songs.filter(song => song.rating === props.filteredValues.rating).map(song => (
+            <Song
+                key={song.id}
+                name={song.name}
+                artist={song.artist}
+                genre={song.genre}
+                rating={song.rating}
+                id={song.id}
+                deleteSong={props.deleteSong}
+            />
+        ));
+    } else if (props.filteredValues.genre && props.filteredValues.rating) {
+        songs = props.songs.filter(song => (song.genre === props.filteredValues.genre) && (song.rating === props.filteredValues.rating)).map(song => (
+            <Song
+                key={song.id}
+                name={song.name}
+                artist={song.artist}
+                genre={song.genre}
+                rating={song.rating}
+                id={song.id}
+                deleteSong={props.deleteSong}
+            />
+        ));
+    } else {
+        songs = props.songs.map(song => (
+            <Song
+                key={song.id}
+                name={song.name}
+                artist={song.artist}
+                genre={song.genre}
+                rating={song.rating}
+                id={song.id}
+                deleteSong={props.deleteSong}
+            />
+        ));
+    }
 
     return (
         <table>
