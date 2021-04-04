@@ -20,8 +20,9 @@ function SongForm(props) {
 
     const { name, artist, genre, rating } = props.inputValues;
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="song-form">
             <input
+                className="song-form__input"
                 type="text"
                 name="name"
                 value={name || ''}
@@ -29,6 +30,7 @@ function SongForm(props) {
                 onChange={handleInputChange}
             />
             <input
+                className="song-form__input"
                 type="text"
                 name="artist"
                 value={artist || ''}
@@ -36,11 +38,12 @@ function SongForm(props) {
                 onChange={handleInputChange}
             />
             <select
+                className="song-form__select"
                 name="genre"
                 value={genre || ''}
                 onChange={handleInputChange}
             >
-                <option value="">-- Genre --</option>
+                <option value="">-- Choose a genre --</option>
                 <option value="Blues">Blues</option>
                 <option value="Classical">Classical</option>
                 <option value="Country">Country</option>
@@ -62,6 +65,7 @@ function SongForm(props) {
                 <option value="Trance">Trance</option>
             </select>
             <input
+                className="song-form__input"
                 type="number"
                 name="rating"
                 value={rating || ''}
@@ -70,7 +74,7 @@ function SongForm(props) {
                 placeholder="Rating (1-5)"
                 onChange={handleInputChange}
             />
-            <button type="submit">Add song</button>
+            <button type="submit" className="song-form__submit">Add song</button>
         </form>
     );
 }
