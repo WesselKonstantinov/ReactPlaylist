@@ -3,53 +3,13 @@ import Song from './Song';
 function SongTable(props) {
     let songs;
     if (props.filteredValues.genre && !props.filteredValues.rating) {
-        songs = props.songs.filter(song => song.genre === props.filteredValues.genre).map(song => (
-            <Song
-                key={song.id}
-                name={song.name}
-                artist={song.artist}
-                genre={song.genre}
-                rating={song.rating}
-                id={song.id}
-                deleteSong={props.deleteSong}
-            />
-        ));
+        songs = props.songs.filter(song => song.genre === props.filteredValues.genre);
     } else if (props.filteredValues.rating && !props.filteredValues.genre) {
-        songs = props.songs.filter(song => song.rating === props.filteredValues.rating).map(song => (
-            <Song
-                key={song.id}
-                name={song.name}
-                artist={song.artist}
-                genre={song.genre}
-                rating={song.rating}
-                id={song.id}
-                deleteSong={props.deleteSong}
-            />
-        ));
+        songs = props.songs.filter(song => song.rating === props.filteredValues.rating);
     } else if (props.filteredValues.genre && props.filteredValues.rating) {
-        songs = props.songs.filter(song => (song.genre === props.filteredValues.genre) && (song.rating === props.filteredValues.rating)).map(song => (
-            <Song
-                key={song.id}
-                name={song.name}
-                artist={song.artist}
-                genre={song.genre}
-                rating={song.rating}
-                id={song.id}
-                deleteSong={props.deleteSong}
-            />
-        ));
+        songs = props.songs.filter(song => (song.genre === props.filteredValues.genre) && (song.rating === props.filteredValues.rating));
     } else {
-        songs = props.songs.map(song => (
-            <Song
-                key={song.id}
-                name={song.name}
-                artist={song.artist}
-                genre={song.genre}
-                rating={song.rating}
-                id={song.id}
-                deleteSong={props.deleteSong}
-            />
-        ));
+        songs = props.songs;
     }
 
     return (
@@ -64,7 +24,17 @@ function SongTable(props) {
                 </tr>
             </thead>
             <tbody>
-                {songs}
+                {songs.map(song => (
+                    <Song
+                        key={song.id}
+                        name={song.name}
+                        artist={song.artist}
+                        genre={song.genre}
+                        rating={song.rating}
+                        id={song.id}
+                        deleteSong={props.deleteSong}
+                    />
+                ))}
             </tbody>
         </table>
     );
