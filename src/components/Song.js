@@ -6,21 +6,21 @@ function Song(props) {
     }
 
     return (
-        <tr>
-            <td>
+        <tr className="song-table__row">
+            <td className="song-table__data">
                 {name}
             </td>
-            <td>
+            <td className="song-table__data">
                 {artist}
             </td>
-            <td>
+            <td className="song-table__data">
                 {genre}
             </td>
-            <td>
+            <td className="song-table__data">
                 {rating}
             </td>
-            <td>
-                <button onClick={handleClick}>Delete</button>
+            <td className="song-table__data">
+                <button onClick={handleClick} className="song-table__delete-button">Delete</button>
             </td>
         </tr>
     );

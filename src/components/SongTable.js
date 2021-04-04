@@ -13,14 +13,14 @@ function SongTable(props) {
     }
 
     return (
-        <table>
+        <table className="song-table">
             <thead>
-                <tr>
-                    <th>Song</th>
-                    <th>Artist</th>
-                    <th>Genre</th>
-                    <th>Rating</th>
-                    <th>Action</th>
+                <tr className="song-table__row">
+                    <th className="song-table__header">Song</th>
+                    <th className="song-table__header">Artist</th>
+                    <th className="song-table__header">Genre</th>
+                    <th className="song-table__header">Rating</th>
+                    <th className="song-table__header">Action</th>
                 </tr>
             </thead>
             <tbody>
