@@ -19,7 +19,7 @@ function SongOverview() {
     function addSong(inputValues) {
         const { name, artist, genre, rating } = inputValues;
         const newSong = {
-            id: (songs.length === 0) ? 1 : songs.length + 1,
+            id: new Date().valueOf(), // value based on milliseconds ensures we get a unique id
             name,
             artist,
             genre,
