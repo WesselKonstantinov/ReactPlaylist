@@ -3,7 +3,7 @@ import SongOverview from './components/SongOverview';
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Header />
       <SongOverview />
     </div>

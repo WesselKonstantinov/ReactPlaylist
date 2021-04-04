@@ -34,7 +34,7 @@ function SongOverview() {
     }
 
     return (
-        <main>
+        <main className="app__main-section">
             <SongForm
                 inputValues={inputValues}
                 setInputValues={setInputValues}
